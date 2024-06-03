@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Hifuku: Morphometric Analysis of Sural Nerve Biopsies
 Hifuku, meaning 'sural' or 'saphenous' in Japanese, is an open-source machine learning-based software designed for Whole slide Morphometric Analysis in human sural nerve biopsies.
 
@@ -37,3 +38,7 @@ Python (3.10.12), torch (2.1.0+cu118), torchvision (0.16.0+cu118), torchmetrics 
 
 ## Citation
 Automated Whole Slide Morphometrics of Sural Nerve Biopsy by Machine Learning
+=======
+# mmmetry
+automated muscle morphometry
+>>>>>>> origin/main
