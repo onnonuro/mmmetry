@@ -39,25 +39,6 @@ def main(root, wsi_path, scale):
             with zipfile.ZipFile(zip_path, 'r') as zip_ref:
                 zip_ref.extractall(output)
             os.remove(zip_path)
-            
-            # print(root)
-            # zip_path = glob(f'{root}/weights/weights*tmp')[0]
-            # output = f'{root}/weights'
-            # os.makedirs(output, exist_ok=True)
-            # with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-            #     zip_ref.extractall(output)
-            # os.remove(zip_path)
-            
-            # output = f'{root}/weights'
-            # os.makedirs(f'{root}/weights', exist_ok=True)
-            # gdown.download(url, output, quiet=False)
-
-            # # Extract the zip file
-            # with zipfile.ZipFile(output, 'r') as zip_ref:
-            #     zip_ref.extractall(f'{root}')
-
-            # # Delete the zip file after extraction
-            # os.remove(output)
             break
         
 
@@ -88,7 +69,7 @@ def main(root, wsi_path, scale):
     boxes_large = []
     masks_large = []
     for n_tile, result in enumerate(results):
-        boxes = result.boxes.xyxy.numpy().astype(int)
+        boxes = result.boxes.xyxy.cpu().numpy().astype(int)
         if boxes.shape == (0, 4):
             continue
         probs= result.boxes.conf.numpy()
