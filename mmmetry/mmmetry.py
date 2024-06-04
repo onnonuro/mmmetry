@@ -40,6 +40,14 @@ def main(root, wsi_path, scale):
                 zip_ref.extractall(output)
             os.remove(zip_path)
             
+            # print(root)
+            # zip_path = glob(f'{root}/weights/weights*tmp')[0]
+            # output = f'{root}/weights'
+            # os.makedirs(output, exist_ok=True)
+            # with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+            #     zip_ref.extractall(output)
+            # os.remove(zip_path)
+            
             # output = f'{root}/weights'
             # os.makedirs(f'{root}/weights', exist_ok=True)
             # gdown.download(url, output, quiet=False)
