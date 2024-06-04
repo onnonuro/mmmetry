@@ -6,7 +6,7 @@ install_requires = [str(req.requirement) for req in requirements]
 
 setup(
     name='mmmetry',
-    version='0.0.1',
+    version='0.1.0',
     author='onnonuro',
     packages=['mmmetry'],
     install_requires=install_requires,

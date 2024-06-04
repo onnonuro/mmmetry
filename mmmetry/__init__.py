@@ -1,3 +1,3 @@
-from .hifuku import *
+from .mmmetry import *
 
 __all__ = ['main']
