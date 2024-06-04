@@ -32,17 +32,24 @@ def main(root, wsi_path, scale):
     for path_wt in weight_paths:
         if not os.path.exists(path_wt):
             url = 'https://drive.google.com/uc?id=1KL7NbGX0K0NAnV31ZrF8vBn-JYz9e4N2'
-    
+            gdown.download(url, root, quiet=False)
+            zip_path = glob(f'{root}/mmmetry*tmp')[0]
             output = f'{root}/weights'
-            os.makedirs(f'{root}/weights', exist_ok=True)
-            gdown.download(url, output, quiet=False)
+            os.makedirs(output, exist_ok=True)
+            with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                zip_ref.extractall(output)
+            os.remove(zip_path)
+            
+            # output = f'{root}/weights'
+            # os.makedirs(f'{root}/weights', exist_ok=True)
+            # gdown.download(url, output, quiet=False)
 
-            # Extract the zip file
-            with zipfile.ZipFile(output, 'r') as zip_ref:
-                zip_ref.extractall(f'{root}')
+            # # Extract the zip file
+            # with zipfile.ZipFile(output, 'r') as zip_ref:
+            #     zip_ref.extractall(f'{root}')
 
-            # Delete the zip file after extraction
-            os.remove(output)
+            # # Delete the zip file after extraction
+            # os.remove(output)
             break
         
 
