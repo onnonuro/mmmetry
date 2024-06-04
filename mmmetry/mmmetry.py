@@ -72,7 +72,7 @@ def main(root, wsi_path, scale):
         boxes = result.boxes.xyxy.cpu().numpy().astype(int)
         if boxes.shape == (0, 4):
             continue
-        probs= result.boxes.conf.numpy()
+        probs= result.boxes.conf.cpu().numpy()
 
         masks = result.masks.xy
         n_col = tiled_images['num_row_col'][n_tile][1]
