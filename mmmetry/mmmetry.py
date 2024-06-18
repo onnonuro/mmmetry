@@ -247,6 +247,11 @@ def main(root, wsi_path, scale):
     color_mask  = (color_mask * 255).astype(np.uint8)
     merged = cv2.addWeighted(img_np, 0.3, color_mask, 0.7, 0)
     Image.fromarray(merged).save(f'{save_dir}/{image_id}_area.jpg')
+    
+    print('Area')
+    plt.imshow(merged)
+    plt.axis('off')
+    plt.show()
 
 
     # get masks of circularity
@@ -273,7 +278,11 @@ def main(root, wsi_path, scale):
     color_mask  = (color_mask * 255).astype(np.uint8)
     merged = cv2.addWeighted(img_np, 0.3, color_mask, 0.7, 0)
     Image.fromarray(merged).save(f'{save_dir}/{image_id}_circularity.jpg')
-
+    print('Circularity')
+    plt.imshow(merged)
+    plt.axis('off')
+    plt.show()
+    
     #  get masks of circularity in small fibers
     masks = np.zeros((wsi_h, wsi_w))
     for row in tqdm(data.itertuples()):
@@ -301,7 +310,12 @@ def main(root, wsi_path, scale):
     color_mask  = (color_mask * 255).astype(np.uint8)
     merged = cv2.addWeighted(img_np, 0.3, color_mask, 0.7, 0)
     Image.fromarray(merged).save(f'{save_dir}/{image_id}_circularity_small_fibers.jpg')
-
+    
+    print('Circularity in small fibers')
+    plt.imshow(merged)
+    plt.axis('off')
+    plt.show()
+    
     # get masks of small angular fibers
     masks = np.zeros((wsi_h, wsi_w))
     for row in tqdm(data.itertuples()):
@@ -334,7 +348,11 @@ def main(root, wsi_path, scale):
     merged = cv2.addWeighted(img_np, 0.3, color_mask, 0.7, 0)
     Image.fromarray(merged).save(f'{save_dir}/{image_id}_small_angular_fibers.jpg')
 
-
+    print('Small angular fibers')
+    plt.imshow(merged)
+    plt.axis('off')
+    plt.show()
+    
     # get masks of small round fibers
     masks = np.zeros((wsi_h, wsi_w))
     for row in tqdm(data.itertuples()):
@@ -366,7 +384,11 @@ def main(root, wsi_path, scale):
     color_mask  = (color_mask * 255).astype(np.uint8)
     merged = cv2.addWeighted(img_np, 0.3, color_mask, 0.7, 0)
     Image.fromarray(merged).save(f'{save_dir}/{image_id}_small_round_fibers.jpg')
-
+    print('Small round fibers')
+    plt.imshow(merged)
+    plt.axis('off')
+    plt.show()
+    
         
     df_case = df_morph.loc[:, ['image_id', 'area', 'perimeter', 'circularity', 'eccentricity']].groupby(['image_id']).agg(['mean', 'std', 'count'])
     df_case.columns = [
