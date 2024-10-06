@@ -2,7 +2,7 @@
 Machine learning based software for whole slide morphometric analysis of human biopsied muscle on H&E.
 
 
-![Alt Text](data/graphical_abstract.pdf)
+![Alt Text](data/graphical_abstract.jpg)
 
 
 
