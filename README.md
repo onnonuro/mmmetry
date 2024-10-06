@@ -9,7 +9,7 @@ Machine learning based software for whole slide morphometric analysis of human b
 ## Installation
 Clone the Hifuku GitHub repository:
    ```python
-   git clone https://github.com/onnonuro/hifuku.git
+   git clone https://github.com/onnonuro/mmmetry.git
    ```
 
 
