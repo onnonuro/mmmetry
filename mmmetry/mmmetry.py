@@ -31,7 +31,7 @@ def main(root, wsi_path, scale):
     weight_paths.append(seg_weight)
     for path_wt in weight_paths:
         if not os.path.exists(path_wt):
-            url = 'https://drive.google.com/uc?id=1KL7NbGX0K0NAnV31ZrF8vBn-JYz9e4N2'
+            url = 'https://drive.google.com/uc?id=1wzoumf4xKB65N3ZCN8JZ0auXC4pb4Q2_'
             temp_file = os.path.join(root, f'mmmetry_{os.urandom(16).hex()}.tmp')
             gdown.download(url, temp_file, quiet=False)
             zip_path = glob(f'{root}/mmmetry*tmp')[0]
