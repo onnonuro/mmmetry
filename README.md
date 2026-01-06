@@ -33,4 +33,7 @@ This software was tested in the following Google Clolab environment on June 4, 2
 
 Python (3.10.12), torch (2.1.0+cu118), torchvision (0.16.0+cu118), torchmetrics (1.2.0), pytorch-lightning (2.1.2), segmentation-models-pytorch (0.3.3), timm (0.9.2), opencv-python (4.8.0.76), albumentations (1.3.1)
 
+## Citation
+If you use this software in your research, please cite:
 
+Ono D, Kawai H, Kuwahara H, Yokota T. Refining muscle morphometry through machine learning and spatial analysis. Neuropathol Appl Neurobiol. 2025 Apr;51(2):e70012. https://onlinelibrary.wiley.com/doi/10.1111/nan.70012
